@@ -7,7 +7,6 @@ if (process.env.JAWSDB_URL) {
 } else {
     connection = mysql.createConnection({
         host: "localhost",
-        port: 3306,
         user: "root",
         password: "Jordan923",
         database: "burgers_db",
@@ -19,6 +18,9 @@ connection.connect(function(err) {
         console.error("error connecting at: " + err.stack);
         return;
     }
+    console.log("Successful connection as id "+ connection.threadId);
 });
 
 module.exports = connection;
+
+//arcane-bastion-32430
